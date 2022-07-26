@@ -1,0 +1,16 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "synchronize": true,
+  "username": "postgres",
+  "password": "docker",
+  "database": "osimlog",
+  "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
+  "migrations": [
+      "./src/shared/infra/typeorm/migrations/*.ts"
+  ],
+  "cli": {
+      "migrationsDir": "./src/infra/shared/typeorm/migrations"
+  }
+}
