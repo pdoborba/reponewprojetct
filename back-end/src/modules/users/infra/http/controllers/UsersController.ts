@@ -1,3 +1,4 @@
+import UpdateProfileService from '@modules/users/services/UpdateProfileService';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import CreateUserService from '../../../services/CreateUserService';
@@ -14,13 +15,25 @@ export default class UsersController {
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const { name, email, password } = request.body;
+    const {
+      corporate_name,
+      fantasy_name,
+      cnpj,
+      email,
+      address,
+      state_registration,
+      password,
+    } = request.body;
 
     const createUser = container.resolve(CreateUserService);
 
     const user = await createUser.execute({
-      name,
+      corporate_name,
+      fantasy_name,
+      cnpj,
       email,
+      address,
+      state_registration,
       password,
     });
 

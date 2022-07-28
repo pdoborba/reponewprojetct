@@ -50,6 +50,10 @@ class UpdateProfileService {
     }
 
     user.corporate_name = corporate_name;
+    user.fantasy_name = fantasy_name;
+    user.state_registration = state_registration;
+    user.cnpj = cnpj;
+    user.address = address;
     user.email = email;
 
     await this.usersRepository.save(user);

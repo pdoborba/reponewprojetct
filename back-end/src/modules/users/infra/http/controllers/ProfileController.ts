@@ -28,7 +28,6 @@ export default class ProfileController {
     } = request.body;
 
     const updateProfile = container.resolve(UpdateProfileService);
-
     const user = await updateProfile.execute({
       user_id,
       corporate_name,

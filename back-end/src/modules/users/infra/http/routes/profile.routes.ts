@@ -19,6 +19,7 @@ profileRouter.put(
       cnpj: Joi.number().required(),
       state_registration: Joi.number().required(),
       email: Joi.string().email().required(),
+      address: Joi.string().required(),
       old_password: Joi.string(),
       password: Joi.string().optional(),
       password_confirmation: Joi.string()
